@@ -1,0 +1,24 @@
+<div class="row" style="margin: 4px;">
+  <h4>Multi-Select Dropdown using Angular 11/10</h4>
+  <!-- Using Items Input -->
+  <div class="col-md-4">
+    <ng-select [items]="cars" bindLabel="name" placeholder="Select Category" appendTo="body" [multiple]="true"
+      [(ngModel)]="selected">
+    </ng-select>
+  </div>
+  <button class="btn btn-primary col-1" (click)="ButtonClick()">Click Me!</button>
+  <!-- JSON Pipe -->
+</div>
+<div>
+  <p>
+    Selected array of OBJ: {{selected | json}}   
+  </p>
+  <div *ngFor="let value of selected">
+    <p>
+      Selected Value = {{value.name}}
+    </p>
+    <p>
+      Selected Id = {{value.id}}
+    </p>
+  </div>
+</div>
